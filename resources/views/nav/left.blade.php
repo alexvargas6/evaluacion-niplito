@@ -13,6 +13,9 @@
                 <li>
                     <a href="{{route('showVenta')}}"><i class="menu-icon fa fa-usd"></i>Sección de Ventas</a>
                 </li>
+                <li>
+                    <a href="{{route('showReports')}}"><i class="menu-icon fa fa-file-pdf-o"></i>Reportes</a>
+                </li>
             </ul>
         </div>
     </nav>

@@ -29,8 +29,14 @@ Route::group(['prefix' => 'clientes'], function () {
 });
 Route::group(['prefix' => 'ventas'], function () {
     Route::get('/ver', 'ventaControl@showVenta')->name('showVenta');
+    Route::get('/consul/{id?}', 'ventaControl@consultarProducto')->name('consultar');
+    Route::post('/store', 'ventaControl@ventaStore')->name('addV');
 });
-
+Route::group(['prefix' => 'reportes'], function () {
+    Route::get('/ver', 'reportesControl@showR')->name('showReports');
+    Route::post('/PDF/cleinte', 'reportesControl@generarReporte')->name('genCli');
+    Route::post('/PDF/producto', 'reportesControl@generarReporteProducto')->name('genRep');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
